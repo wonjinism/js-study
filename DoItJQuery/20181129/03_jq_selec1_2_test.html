@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+    $(function(){
+        $("#wrap").css("border", "1px solid blue").css("padding", "10px"); // 직접 선택자 #wrap
+        // 부모 요소 선택자
+        $("h2").parent().css("border", "1px solid #f00"); // h2의 부모 요소인 #inner_wrap
+        $("#sub_list_1").parent().css("border", "2px dashed #f00"); // #sub_list_1의 상위 ul
+        
+        // 하위 요소 선택자
+        $("h2").next().css("border", "1px solid green");  // h2의 다음 동일 레벨 요소 p
+        $("#wrap h1").css({"background-color":"yellow", "border":"2px dashed #f100"}); // #wrap 하위의 모든 h1 요소
+
+        // 자식 요소 선택자
+    });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <h1>jQuery 완독 가즈아ㅏㅏ</h1>
+        <div id="inner_wrap">
+            <h1>Title 1</h1>
+            <h2>Title 2</h2>
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+            <p>Paragraph 3</p>
+        </div>
+    </div>
+    <ul id="ul_wrap">
+        <li>List 1
+            <ul>
+                <li id="sub_list_1">sub-list 1</li>
+                <li>sub-list 2</li> 
+                <li>sub-list 3</li> 
+            </ul>
+        </li>
+        <li>List 2</li>
+        <li>List 3</li>
+    </ul>
+</body>
+</html>
