@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+    <title>Carousel using bxSlider.js</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.js"></script>
+    <style>
+      #wrapper {
+        width: 600px;
+        margin: 0 auto;
+      }
+    </style>
+    <script>
+      $(function(){
+        $(".bxslider").bxSlider({
+          slideWidth: 600,
+          captions: true,
+          auto: true,
+          autoControls: true,
+          stopAutoOnclick: true
+        });
+      });
+    </script>
+		<!--[if lt IE 9]>
+		  <script src="js/html5shiv.min.js"></script>
+		<![endif]-->		
+	</head>
+	
+	<body>
+    <div id="wrapper">
+        <div class="bxslider">
+          <div>
+            <img src="images/things-1.jpeg" title="image 1">
+          </div>
+          <div>
+            <img src="images/things-2.jpeg" title="image 2">
+          </div>
+          <div>
+            <img src="images/things-3.jpeg" title="image 3">
+          </div>         
+          <div>
+              <img src="images/things-4.jpeg" title="image 4">
+          </div>            
+        </div>
+		</div>
+  </body>
+</html>
