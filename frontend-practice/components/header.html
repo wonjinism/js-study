@@ -1,0 +1,51 @@
+<nav>
+  <a href="./index.html"><div class="logo"><i class="icon-edit"></i>sakusaku</div></a>
+  <div class="nav-right-wrap">
+    <ul>
+      <ul>
+        <li class="myNote">내 노트</li>
+        <li class="template">템플릿</li>
+        <li class="logout">로그아웃</li>
+      </ul>
+      <ul>
+        <li class="login">로그인</li>
+      </ul>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  header{
+      background: var(--key2);
+      height: 100%;
+      color: var(--key6);
+      font-size: 20px;
+  }
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+  }
+  header .logo {
+    line-height: 200%;
+    margin-left: 15px;
+  }
+  header .logo:hover {
+    color: var(--key4);
+  }
+  .nav-right-wrap ul > ul {
+    display: inline-block;
+  }
+  .nav-right-wrap ul li {
+    display: inline-block;
+    height: 40px;
+    margin-right: 10px;
+    font-size: 16px;
+    line-height: 250%;
+  }
+  .nav-right-wrap ul li:hover {
+    color: var(--key4);
+    cursor: pointer;
+  }
+
+</style>

@@ -1,0 +1,56 @@
+:root {
+    --key0: #000;
+    --key1: #354D73;
+    --key2: #536B99;
+    --key3: #A0A5A9;
+    --key4: #CDE0E4;
+    --key5: #EBCDCB;
+    --key6: #fff;
+}
+
+body {
+    font-family: "fontello";
+    background: var(--key6);
+}
+
+.note {
+    position: fixed;
+    left: 40px;
+    width: calc(100vw - 40px); /* 전체 - left */
+    min-height: calc(100vh - 40px); /* 전체 - header - note-info */
+    background: var(--key6);
+}
+.note-nav {
+    width: calc(100vw - 40px - 10px); /* 전체 - sidebar - margin */
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+    .note-nav ul li{
+        display: inline-block;
+    }
+    .note-nave ul li .note-titleInput {
+        margin: 10px;
+    }
+    .note-nav ul li .note-titleText {
+        font-size: 18px;
+        cursor: pointer;
+    }
+    .note-nav ul li input[type=button] {
+        border: 0;
+        cursor: pointer;
+    }
+    .note-nav ul li.note-userUid,
+    .note-nav ul li.note-regDate {
+        font-size: 12px;
+    }
+
+
+
+.note-content {
+    position: fixed;
+    left: 40px;
+    width: calc(100vw - 40px); /* 전체 - left */
+    min-height: calc(100vh - 40px); /* 전체 - header - note-info */
+}
+

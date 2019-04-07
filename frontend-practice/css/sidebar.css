@@ -1,0 +1,122 @@
+/* 
+  모든 버튼의 height: 20px;
+  최상위 normal: #ccc / selected : #000;
+  하위 normal: selected : 
+  hover : #fff;
+*/
+
+.sidebar-menu {
+  position: fixed;
+  top: 40px;
+  height: calc(100vh - 30px); /* 전체 - top */ 
+  width: 40px;
+  text-align: center;
+  z-index: 2;
+  background: var(--key3);
+}
+.sidebar-menu ul li {
+  padding: 10px;
+  display: block;
+  height: 20px;
+  width: calc(100% - 20px);
+  color: var(--key6);
+}
+.sidebar-menu ul li:hover {
+  background: var(--key5);
+  color: var(--key3);
+}
+.sidebar-menu ul li.selected {
+  background: var(--key1);
+  color: var(--key6);
+}
+
+.sidebar-wrap {
+  height: calc(100vh - 40px);
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: -1000px; /* 기본 위치 40px */
+  background: var(--key6);
+  display: flex;
+  /* display: none; */
+  flex-direction: column;
+}
+
+/* 사이드바 헤더 버튼 */
+.sidebar-header {
+  display: flex;
+}
+
+.sidebar-header > * {
+  height: 40px;
+  text-align: center;
+  line-height: 250%;
+  box-sizing: border-box;
+}
+.sidebar-header > div {
+  flex: 1;
+  background-color: var(--key3);
+  color: var(--key6);
+}
+.sidebar-header > div.selected {
+  background: var(--key1);
+  color: var(--key6);
+}
+.sidebar-header > div:not(.selected):hover {
+  background: var(--key5);
+  color: var(--key2);
+}
+
+/* 사이드바 헤더 버튼 끝 */
+
+.sidebar-content {
+}
+.sidebar-folder-wrap,
+.sidebar-note-wrap {
+  float: left;
+  width: 148px;
+  height: calc(100vh - 40px - 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+  .scrollBar {
+    overflow: auto;
+  }
+    .sidebar-folder-list,
+    .sidebar-note-list {
+      display: flex;
+      flex-direction: column;
+    }
+      .sidebar-item {
+        display: block;
+        padding: 8px;
+      }
+      .sidebar-item.sidebar-folder:hover {
+        background: var(--key5);
+      }
+      .sidebar-item.sidebar-note:hover {
+        background: var(--key5);
+      }
+      .sidebar-item.selected {
+        background: var(--key4);
+      }
+.sidebar-note-wrap {
+  background: #eee;
+}
+.sidebar-split {
+  position: fixed;
+  height: calc(100vh - 40px - 40px);
+  width: 4px;
+  background: #eee;
+  cursor: col-resize;
+}
+.sidebarBtn {
+  flex-basis: 40px;
+  text-align: center;
+  line-height: 300%;
+}
+.sidebarBtn:hover {
+  background: #fff;
+}
