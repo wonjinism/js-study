@@ -10,12 +10,21 @@ function toggleSidebar(){
 }
 
 $('.sidebarMenuBtn').on('click', function(){
-  $('.sidebarMenuBtn').removeClass('selected');
-  $(this).addClass('selected');
   if ($(this).hasClass('sidebarMenuBtn-folder')){
-    objectType = "none";
-    toggleSidebar();
+    if($(this).hasClass('selected')) {
+      $('.sidebarMenuBtn').removeClass('selected');
+      $('.sidebarMenuBtn-text').addClass('selected');
+      objectType ="text";
+      toggleSidebar();
+    } else{
+      $('.sidebarMenuBtn').removeClass('selected');
+      $(this).addClass('selected');
+      objectType = "none";
+      toggleSidebar();
+    }
   } else {
+    $('.sidebarMenuBtn').removeClass('selected');
+    $(this).addClass('selected');
     $('.sidebar-wrap').animate({"left":"-1000px"}, "fast").removeClass('visible');
     if ($(this).hasClass('sidebarMenuBtn-text')){
     /* box.js의 objectType */

@@ -1,0 +1,29 @@
+.toolbar {
+  display: inline-block;
+  z-index: 3;
+  border-width: 1px;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: var(--key4);
+}
+.toolbar-firstGroup,
+.toolbar-secondGroup {
+  display: block;
+  clear:both;
+}
+
+.toolbar-firstGroup > li {
+  float: left;
+  margin: 5px;
+}
+.toolbar-secondGroup > li {
+  float: left;
+  margin: 5px;
+}
+.toolbar-secondGroup > ul {
+  float: left;
+  margin: 5px;
+}
+  .toolbar-justifyGroup > li {
+    display: none;
+  }

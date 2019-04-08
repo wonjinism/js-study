@@ -12,6 +12,9 @@
     
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/box.css">
+    <link rel="stylesheet" href="css/note.css">
+    <link rel="stylesheet" href="css/toolbar.css">
+
 </head>
 <body>
   <header></header>
@@ -19,7 +22,7 @@
   <div class="sidebar-menu">
     <ul>
       <li class="sidebarMenuBtn sidebarMenuBtn-folder"><i class="icon-folder-open-empty"></i></li>
-      <li class="sidebarMenuBtn sidebarMenuBtn-text"><i class="icon-text-width"></i></li>
+      <li class="selected sidebarMenuBtn sidebarMenuBtn-text"><i class="icon-text-width"></i></li>
       <li class="sidebarMenuBtn sidebarMenuBtn-image"><i class="icon-picture"></i></li>
       <li class="sidebarMenuBtn sidebarMenuBtn-video"><i class="icon-video"></i></li>
       <li class="sidebarMenuBtn sidebarMenuBtn-table"><i class="icon-table"></i></li>
@@ -36,39 +39,6 @@
             <ul class="sidebar-folder-list">
               <li class="selected sidebar-item sidebar-folder">${folderName}</li>
               <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
             </ul>
           </div>
           <div class="sidebarBtn sidebar-folder-newBtn">+ New Folder</div>
@@ -78,45 +48,6 @@
           <div class="scrollBar">
             <ul class="sidebar-note-list">
               <li class="selected sidebar-item sidebar-note">선택된 아이</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
               <li class="sidebar-item sidebar-note">${noteName}</li>
             </ul>
           </div>
@@ -136,14 +67,41 @@
         <!-- <li class="note-userUid">published by wonjinism</li> -->
         <li class="note-regDate">last updated on 2018-08-10</li>
       </ul>
-      <ul>
-        <li>공유</li>
-        <li>수정</li>
-        <li>저장</li>
-        <li>템플릿 저장</li>
+      <ul class="note-nav-btn-wrap">
+        <li><input class="note-nav-btn note-nav-btn-share" type="button" value="문서 공유" /></li>
+        <li><input class="note-nav-btn note-nav-btn-edit" type="button" value="문서 수정" /></li>
+        <li><input class="note-nav-btn note-nav-btn-save" type="button" value="문서 저장" /></li>
+        <li><input class="note-nav-btn note-nav-btn-template" type="button" value="템플릿 저장" /></li>
       </ul>
     </div>
     <div class="note-content"></div>
+    <div class="toolbar">
+      <ul>
+        <ul class="toolbar-firstGroup">
+          <li data-command="h1"><i class="icon-header"></i></li>
+          <li data-command="bold"><i class="icon-bold"></i></li>
+          <li data-command="italic"><i class="icon-italic"></i></li>
+          <li data-command="underline"><i class="icon-underline"></i></li>
+          <li data-command="strikeThrough"><i class="icon-strike"></i></li>
+          <li data-command="fore-palette"><i class="icon-font"></i></li>
+          <li data-command="back-palette"><i class="icon-font"></i></li>
+        </ul>
+        <ul class="toolbar-secondGroup">
+          <ul class="toolbar-justifyGroup"><i class="icon-align-left"></i>
+            <li data-command="justifyLeft"><i class="icon-align-left"></i></li>
+            <li data-command="justifyCenter"><i class="icon-align-center"></i></li>
+            <li data-command="justifyRight"><i class="icon-align-right"></i></li>
+            <li data-command="justifyFull"><i class="icon-align-justify"></i></li>
+          </ul>
+          <li data-command="indent"><i class="icon-indent-left"></i></li>
+          <li data-command="outdent"><i class="icon-indent-right"></i></li>
+          <li data-command="insertUnorderedList"><i class="icon-list-bullet"></i></li>
+          <li data-command="insertOrderedList"><i class="icon-list-numbered"></i></li>
+          <li data-command="createlink"><i class="icon-link"></i></li>
+          <li data-command="insertimage"><i class="icon-picture"></i></li>
+        </ul>
+      </ul>
+    </div>
   </section>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -155,6 +113,7 @@
     init();
     // home();
     function init(){
+      // header init
       fetch('components/header.html').then(function(response){
         response.text().then(function(text){
           document.querySelector('header').innerHTML = text;
@@ -184,7 +143,6 @@
     function newDoc(){
       alert('새문서 생성!');
     }
-
 
     function addEventListener(list, event, fn) {
       list.forEach(element => {
