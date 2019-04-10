@@ -1,29 +1,82 @@
 .toolbar {
+  position: fixed;
   display: inline-block;
   z-index: 3;
   border-width: 1px;
-  box-sizing: border-box;
   border-style: solid;
   border-color: var(--key4);
+  background: var(--key6);
+  box-sizing: border-box;
 }
 .toolbar-firstGroup,
 .toolbar-secondGroup {
+  position: relative;
   display: block;
   clear:both;
 }
-
 .toolbar-firstGroup > li {
   float: left;
-  margin: 5px;
+  padding: 5px;
+}
+.toolbar-firstGroup > li:hover {
+  background: var(--key5); 
+}
+.toolbar-firstGroup > li.selected,
+.toolbar-firstGroup > li.clicked {
+  background: var(--key4); 
+}
+.toolbar-firstGroup > li[data-command="forepalette"],
+.toolbar-firstGroup > li[data-command="backpalette"]{
+  position: relative;
+}
+.toolbar-firstGroup > li[data-command="backpalette"] > i{
+  background: #00ffff;
+}
+#colorPalette, #bgColorPalette {
+  background: #fff;
+  visibility: hidden;
+  border: 0;
+  width: 0;
+  height: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 10px;
 }
 .toolbar-secondGroup > li {
   float: left;
-  margin: 5px;
+  padding: 5px;
 }
-.toolbar-secondGroup > ul {
-  float: left;
-  margin: 5px;
+.toolbar-secondGroup > li:hover {
+  background: var(--key5);
 }
-  .toolbar-justifyGroup > li {
+.toolbar-secondGroup > li.selected,
+.toolbar-secondGroup > li.clicked {
+  background: var(--key4);
+}
+  .toolbar-justifyGroup {
     display: none;
+    position: absolute;
+    top: 27px;
+    left: -1px;
+    z-index: 4;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--key4);
+    background: var(--key6);
+    box-sizing: border-box;
+  }
+  .toolbar-justifyGroup > li {
+    float: left;
+    padding: 5px;
+  }
+  .toolbar-justifyGroup > li:hover {
+    background: var(--key5);
+  }
+  .toolbar-justifyGroup > li.selected,
+  .toolbar-justifyGroup > li.clicked {
+    background: var(--key4);
+  }
+  .toolbar-justifyGroup > li:last-child {
+    margin: 0;
   }

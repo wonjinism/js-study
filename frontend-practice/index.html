@@ -18,101 +18,59 @@
 </head>
 <body>
   <header></header>
-  
-  <div class="sidebar-menu">
-    <ul>
-      <li class="sidebarMenuBtn sidebarMenuBtn-folder"><i class="icon-folder-open-empty"></i></li>
-      <li class="selected sidebarMenuBtn sidebarMenuBtn-text"><i class="icon-text-width"></i></li>
-      <li class="sidebarMenuBtn sidebarMenuBtn-image"><i class="icon-picture"></i></li>
-      <li class="sidebarMenuBtn sidebarMenuBtn-video"><i class="icon-video"></i></li>
-      <li class="sidebarMenuBtn sidebarMenuBtn-table"><i class="icon-table"></i></li>
+  <section class="main">
+    <ul class="docWrap">
+      <li class="createNewDoc">새 문서</li>
+      <li class="createNewVoiceRec">빠른 녹음</li>
     </ul>
-  </div>
-  <div class="sidebar-wrap">
-      <div class="sidebar-header">
-        <div class="sidebar-header-btn sidebar-header-noteBtn selected">노트 폴더</div>
-        <div class="sidebar-header-btn sidebar-header-templateBtn">템플릿 폴더</div>
-      </div>
-      <div class="sidebar-content">
-        <div class="sidebar-folder-wrap">
-          <div class="scrollBar">
-            <ul class="sidebar-folder-list">
-              <li class="selected sidebar-item sidebar-folder">${folderName}</li>
-              <li class="sidebar-item sidebar-folder">${folderName}</li>
-            </ul>
-          </div>
-          <div class="sidebarBtn sidebar-folder-newBtn">+ New Folder</div>
-        </div>
-        <span class="sidebar-split"></span>
-        <div class="sidebar-note-wrap">
-          <div class="scrollBar">
-            <ul class="sidebar-note-list">
-              <li class="selected sidebar-item sidebar-note">선택된 아이</li>
-              <li class="sidebar-item sidebar-note">${noteName}</li>
-            </ul>
-          </div>
-          <div class="sidebarBtn sidebar-note-newBtn">+ New Note</div>
-        </div>
-        <span class="sidebar-split"></span>
-      </div>
-    </div>
-  <section class="note">
-    <div class="note-nav">
-      <ul class="note-info">
-        <li class="note-title">
-          <input class="note-titleInput" type="hidden" name="doc_title" />
-          <input class="note-titleBtn" type="hidden" value="제목 변경" />
-          <span class="note-titleText">문서의 제목을 입력하세요</span>
-        </li>
-        <!-- <li class="note-userUid">published by wonjinism</li> -->
-        <li class="note-regDate">last updated on 2018-08-10</li>
-      </ul>
-      <ul class="note-nav-btn-wrap">
-        <li><input class="note-nav-btn note-nav-btn-share" type="button" value="문서 공유" /></li>
-        <li><input class="note-nav-btn note-nav-btn-edit" type="button" value="문서 수정" /></li>
-        <li><input class="note-nav-btn note-nav-btn-save" type="button" value="문서 저장" /></li>
-        <li><input class="note-nav-btn note-nav-btn-template" type="button" value="템플릿 저장" /></li>
-      </ul>
-    </div>
-    <div class="note-content"></div>
-    <div class="toolbar">
-      <ul>
-        <ul class="toolbar-firstGroup">
-          <li data-command="h1"><i class="icon-header"></i></li>
-          <li data-command="bold"><i class="icon-bold"></i></li>
-          <li data-command="italic"><i class="icon-italic"></i></li>
-          <li data-command="underline"><i class="icon-underline"></i></li>
-          <li data-command="strikeThrough"><i class="icon-strike"></i></li>
-          <li data-command="fore-palette"><i class="icon-font"></i></li>
-          <li data-command="back-palette"><i class="icon-font"></i></li>
-        </ul>
-        <ul class="toolbar-secondGroup">
-          <ul class="toolbar-justifyGroup"><i class="icon-align-left"></i>
-            <li data-command="justifyLeft"><i class="icon-align-left"></i></li>
-            <li data-command="justifyCenter"><i class="icon-align-center"></i></li>
-            <li data-command="justifyRight"><i class="icon-align-right"></i></li>
-            <li data-command="justifyFull"><i class="icon-align-justify"></i></li>
-          </ul>
-          <li data-command="indent"><i class="icon-indent-left"></i></li>
-          <li data-command="outdent"><i class="icon-indent-right"></i></li>
-          <li data-command="insertUnorderedList"><i class="icon-list-bullet"></i></li>
-          <li data-command="insertOrderedList"><i class="icon-list-numbered"></i></li>
-          <li data-command="createlink"><i class="icon-link"></i></li>
-          <li data-command="insertimage"><i class="icon-picture"></i></li>
-        </ul>
-      </ul>
-    </div>
+    <ul class="templateWrap">
+      <li class="createNewDoc withTemplate">추천 템플릿 1</li>
+      <li class="createNewDoc withTemplate">추천 템플릿 2</li>
+      <li>템플릿 더 보기</li>
+    </ul>
   </section>
+  <section class="note"></section>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+  <script src="js/global.js"></script>
   <script src="js/sidebar.js"></script>
   <script src="js/box.js"></script>
-
+  <script src="js/toolbar.js"></script>
   <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBgNcdD75pwlziKGeSRgTDT3kH4hDvO2io",
+      authDomain: "realtime-db-web-practice.firebaseapp.com",
+      databaseURL: "https://realtime-db-web-practice.firebaseio.com",
+      projectId: "realtime-db-web-practice",
+      storageBucket: "",
+      messagingSenderId: "393936514150"
+    };
+    firebase.initializeApp(config);
 
-    init();
+
+    $('.createNewDoc').on('click', newDoc);
+
+    // 문서 정보를 생성한다.
+    function new_doc(){
+      var doc_uid = firebase.database().ref().child('docs').push().key;
+      console.log(doc_uid);
+      $.ajax({
+        url:"creatnewdoc",
+        data:{uid:uid},
+        type:"POST",
+        success :function(res){
+          var randomValue = doc_uid;
+          location.href=res+"?randomValue="+randomValue;
+        }
+      })
+    } 
+
+
+    headerInit();
     // home();
-    function init(){
+    function headerInit(){
       // header init
       fetch('components/header.html').then(function(response){
         response.text().then(function(text){
@@ -142,6 +100,7 @@
     
     function newDoc(){
       alert('새문서 생성!');
+      var doc_uid = firebase.database().ref().child('docs').push().key;
     }
 
     function addEventListener(list, event, fn) {
@@ -150,38 +109,40 @@
       });
     }
 
-  </script> 
-  <script> // 노트 타이틀
-    // note-title-text
-    $('.note-titleText').on('click', function(){
-      $(this).toggle();
-      $('.note-titleInput').attr('type', 'text').val($(this).text()).focus();
-      $('.note-titleBtn').attr('type', 'button');
-      $('.note-regDate').toggle();
-      $('.note-userUid').toggle();
-    });
-    // note-title-btn
-    $('.note-titleBtn').on('click', function(){
-      var newInputText = $('.note-titleInput').val();
-      if (newInputText.trim() == ''){
-        alert('제목을 입력해 주세요!');
-        return;
-      }
-      alert('저장하는 ajax');
-      console.log(newInputText);
-      // $.ajax({
-      //   url: ,
-      //   data: ,
-      //   type: ,
-      //   success: function(){
-          $('.note-titleText').text(newInputText).toggle();
-          $('.note-titleInput').attr('type', 'hidden');
-          $(this).attr('type', 'hidden');
-          $('.note-regDate').toggle();
-          $('.note-userUid').toggle();
+
+    function noteInit() {
+      // note-title-text
+      $('.note-titleText').on('click', function () {
+        $(this).toggle();
+        $('.note-titleInput').attr('type', 'text').val($(this).text()).focus();
+        $('.note-titleBtn').attr('type', 'button');
+        $('.note-regDate').toggle();
+        $('.note-userUid').toggle();
+      });
+      // note-title-btn
+      $('.note-titleBtn').on('click', function () {
+        var newInputText = $('.note-titleInput').val();
+        if (newInputText.trim() == '') {
+          alert('제목을 입력해 주세요!');
+          return;
+        }
+        alert('저장하는 ajax');
+        console.log(newInputText);
+        // $.ajax({
+        //   url: ,
+        //   data: ,
+        //   type: ,
+        //   success: function(){
+        $('.note-titleText').text(newInputText).toggle();
+        $('.note-titleInput').attr('type', 'hidden');
+        $(this).attr('type', 'hidden');
+        $('.note-regDate').toggle();
+        $('.note-userUid').toggle();
         // }
-      // });
-    });
+        // });
+      });
+    }
+    
   </script>
 </body>
 </html>

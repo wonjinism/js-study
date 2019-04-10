@@ -11,3 +11,14 @@
 body {
     background: var(--key6);
 }
+
+.note div h1 {
+    font-size: 24px;
+}
+
+::selection {
+    background: var(--key4); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+    background: var(--key4); /* Gecko Browsers */
+}

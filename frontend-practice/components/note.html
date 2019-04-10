@@ -1,0 +1,59 @@
+<div class="note-nav">
+  <ul class="note-info">
+    <li class="note-title">
+      <input class="note-titleInput" type="hidden" name="doc_title" />
+      <input class="note-titleBtn" type="hidden" value="제목 변경" />
+      <span class="note-titleText">문서의 제목을 입력하세요</span>
+    </li>
+    <!-- <li class="note-userUid">published by wonjinism</li> -->
+    <li class="note-regDate">last updated on 2018-08-10</li>
+  </ul>
+  <ul class="note-nav-btn-wrap">
+    <li><input class="note-nav-btn note-nav-btn-share" type="button" value="문서 공유" /></li>
+    <li><input class="note-nav-btn note-nav-btn-edit" type="button" value="문서 수정" /></li>
+    <li><input class="note-nav-btn note-nav-btn-save" type="button" value="문서 저장" /></li>
+    <li><input class="note-nav-btn note-nav-btn-template" type="button" value="템플릿 저장" /></li>
+  </ul>
+</div>
+<div class="note-content"></div>
+<div class="toolbar">
+  <ul>
+    <ul class="toolbar-firstGroup">
+      <li data-command="h1"><i class="icon-header"></i></li>
+      <li data-command="bold"><i class="icon-bold"></i></li>
+      <li data-command="italic"><i class="icon-italic"></i></li>
+      <li data-command="underline"><i class="icon-underline"></i></li>
+      <li data-command="strikeThrough"><i class="icon-strike"></i></li>
+      <li data-command="forepalette"><i class="icon-font colorPalette"><input type="color" id="colorPalette" list="colorList"></i></li>
+      <datalist id="colorList">
+        <option value="#000000">
+        <option value="#354D73">
+        <option value="#536B99">
+        <option value="#A0A5A9">
+        <option value="#EBCDCB">
+      </datalist>
+      <li data-command="backpalette"><i class="icon-font bgColorPalette"><input type="color" id="bgColorPalette" list="bgColorList"></i></li>
+      <datalist id="bgColorList">
+        <option value="#00ffff">
+        <option value="#ff00ff">
+        <option value="#ffff00">
+        <option value="#ffaa00">
+      </datalist>
+    </ul>
+    <ul class="toolbar-secondGroup">
+      <li class="justifySelected"><i class="icon-align-left"></i></li>
+      <li data-command="indent"><i class="icon-indent-left"></i></li>
+      <li data-command="outdent"><i class="icon-indent-right"></i></li>
+      <li data-command="insertUnorderedList"><i class="icon-list-bullet"></i></li>
+      <li data-command="insertOrderedList"><i class="icon-list-numbered"></i></li>
+      <!-- <li data-command="createlink"><i class="icon-link"></i></li>
+      <li data-command="ulink"><i class="icon-unlink"></i></li> -->
+      <ul class="toolbar-justifyGroup">  
+        <li data-command="justifyLeft"><i class="icon-align-left"></i></li>
+        <li data-command="justifyCenter"><i class="icon-align-center"></i></li>
+        <li data-command="justifyRight"><i class="icon-align-right"></i></li>
+        <li data-command="justifyFull"><i class="icon-align-justify"></i></li>
+      </ul>
+    </ul>
+  </ul>
+</div>

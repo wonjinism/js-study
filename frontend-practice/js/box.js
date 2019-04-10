@@ -10,6 +10,42 @@ function lastBoxCheck(){
   }
 }
 
+function toolbarActive(tag) {
+  var isDragging = false;
+  var selectedText = '';
+  tag.dblclick(function(e){
+    selectedText = window.getSelection().toString();
+    console.log('selected : ' + selectedText); ///
+    if(selectedText != ''){
+      $('.toolbar').css('display', 'inline-block');
+      $('.toolbar').css('left', e.pageX + 'px');
+      $('.toolbar').css('top', e.pageY - 80 + 'px');
+      selectedText = '';
+    } else{
+      $('.toolbar').css('display', 'none');
+    }
+  }).mousedown(function(){
+    isDragging = false;
+  }).mousemove(function(e){
+    isDragging = true;
+  }).mouseup(function(e){
+    var wasDragging = isDragging;
+    isDragging = false;
+    if (wasDragging){
+      selectedText = window.getSelection().toString();
+      console.log('selected : ' + selectedText); ///
+      if(selectedText != ''){
+        $('.toolbar').css('display', 'inline-block');
+        $('.toolbar').css('left', e.pageX + 'px');
+        $('.toolbar').css('top', e.pageY - 80 + 'px');
+        selectedText = '';
+      } 
+    } else{
+      $('.toolbar').css('display', 'none');
+    }
+  });
+}
+
 function enableEdit(e) {
   e.stopPropagation();
   lastBoxCheck();
@@ -17,7 +53,12 @@ function enableEdit(e) {
   if(typeof isEditable == 'undefined'){
     $(this).attr('contentEditable', true);
     $(this).focus();
+    toolbarActive($(this));
   }
+      // $(this).click(function(e){
+      //   e.stopPropagation();
+      //   $('.toolbar').css('display', 'none');
+      // });
 }
 
 function Box(x, y) {
@@ -46,6 +87,8 @@ function createBox(e) {
   var newBox = $('.box').last();
   newBox.attr('contentEditable', true);
   newBox.focus();
+  $('.toolbar').css('display', 'none');
+  toolbarActive(newBox);
 }
 
 $(function () {
